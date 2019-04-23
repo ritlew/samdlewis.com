@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+    gunicorn:
+        image: gunicorn
+        build:
+            context: .
+            dockerfile: dockerfiles/gunicorn.dockerfile
+        command: gunicorn --bind 0.0.0.0:8000 main:app
+        ports:
+            - "8000:8000"
+        restart: unless-stopped
+    nginx:
+        image: nginx:1.15.8-alpine
+        volumes:
+            - ./config/nginx/conf.d:/etc/nginx/conf.d
+            - ./frontend/build:/var/www/html
+        ports:
+            - "8001:80"
+        restart: unless-stopped

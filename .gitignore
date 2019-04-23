@@ -1,0 +1,8 @@
+# folders
+venv/
+node_modules/
+build/
+
+# files
+yarn.lock
+package-lock.json
