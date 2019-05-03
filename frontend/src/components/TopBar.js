@@ -32,7 +32,7 @@ class TopBar extends Component {
     render() {
         return (
             <div>
-                <Navbar color="light" light expand="md">
+                <Navbar color="dark" dark expand="md">
                     <NavbarBrand href="/">Samuel Lewis</NavbarBrand>
                     <NavbarToggler onClick={this.toggle} />
                     <Collapse isOpen={this.state.isOpen} navbar>
@@ -68,7 +68,7 @@ class TopBar extends Component {
                             <NavItem>
                                 <NavLink href="https://github.com/ritlew">
                                     <IconContext.Provider value={{ size: "1.5em" }}>
-                                        <GoMarkGithub />
+                                        <GoMarkGithub /> Github
                                     </IconContext.Provider>
                                 </NavLink>
                             </NavItem>
